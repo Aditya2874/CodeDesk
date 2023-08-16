@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "832949038037",
+    "project_id": "codedesk-ec2a0",
+    "storage_bucket": "codedesk-ec2a0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:832949038037:android:25e4b835e4d853fbd46b5c",
+        "android_client_info": {
+          "package_name": "com.example.cpscheduler"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "832949038037-mj9tpg67sibjql0j9p9q75p2sg8leq4u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPHKLB-B0czhdugOkjdW4GwSe8OMbGVMU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "832949038037-mj9tpg67sibjql0j9p9q75p2sg8leq4u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
