@@ -5,7 +5,7 @@ public class Information {
     private String link;
     private String end_time;
     private String start_time;
-    private String duration;
+    private Long duration;
 
     public String getName() {
         return name;
@@ -39,11 +39,11 @@ public class Information {
         this.start_time = start_time;
     }
 
-    public String getDuration() {
+    public Long getDuration() {
         return duration;
     }
 
-    public void setDuration(String duration) {
+    public void setDuration(Long duration) {
         this.duration = duration;
     }
 }

@@ -1,73 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="wrap_content" android:layout_width="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp">
 
-    <RelativeLayout
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Contest Title"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:textSize="24dp"
-            android:layout_marginTop="10dp"
-            android:layout_centerHorizontal="true"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:layout_alignParentEnd="true"
-            android:layout_marginBottom="15dp"
-            android:layout_marginEnd="4dp"></TextView>
+    <TextView
+        android:id="@+id/startText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Start Time: 10:00 AM"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/startText"
-            android:textAlignment="center"
-            android:layout_centerHorizontal="true"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@+id/textView"
-            android:layout_marginBottom="10dp"
-            android:layout_marginEnd="4dp" />
+    <TextView
+        android:id="@+id/endText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/startText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="End Time: 12:00 PM"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/endText"
-            android:textAlignment="center"
-            android:layout_centerHorizontal="true"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
+    <Button
+        android:id="@+id/urlBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/endText"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/in_button"
+        android:text="Enter Contest"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
 
-            android:layout_below="@+id/startText" />
+    <Button
+        android:id="@+id/addRemainder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="\u23F0"
+        android:textSize="22sp"
+        android:textColor="#FF0000"
+        android:layout_toRightOf="@+id/urlBtn"
+        android:background="@drawable/in_button"
+        android:layout_below="@+id/endText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp" />
 
-
-
-        <Button
-            android:id="@+id/urlBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/in_button"
-            android:layout_below="@+id/endText"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="30dp"
-            android:text="Enter Contest" />
-
-        <Button
-            android:id="@+id/addRemainder"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/in_button"
-            android:layout_below="@+id/endText"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="37dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="13dp"
-            android:layout_marginRight="-368dp"
-            android:layout_marginBottom="30dp"
-            android:layout_toLeftOf="@+id/urlBtn"
-            android:layout_toEndOf="@+id/urlBtn"
-            android:text="Add Remainder" />
-
-    </RelativeLayout>
 </RelativeLayout>

@@ -50,7 +50,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             NotificationChannel channel = new NotificationChannel("noti",name,imp);
             channel.setDescription(description);
-
             NotificationManager notificationManager = context.getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);
         }
@@ -75,22 +74,21 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             public void onClick(View v) {
                 context= v.getContext();
                 long  tri = System.currentTimeMillis()+(1000*2);
-                String myDate = s.getStart_time();
-                LocalDateTime localDateTime = null;
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                    localDateTime = LocalDateTime.parse(myDate,
-                            DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss") );
-                    tri = localDateTime
-                            .atZone(ZoneId.systemDefault())
-                            .toInstant().toEpochMilli();
-                }
+//                String myDate = s.getStart_time();
+//                LocalDateTime localDateTime = null;
+//                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+//                    localDateTime = LocalDateTime.parse(myDate,
+//                            DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss") );
+//                    tri = localDateTime
+//                            .atZone(ZoneId.systemDefault())
+//                            .toInstant().toEpochMilli();
+//                }
 
                 Intent myIntent1 = new Intent(context,AlarmBroadCustReciver.class);
                 PendingIntent pendingIntent1 = PendingIntent.getBroadcast(context, 1253, myIntent1,
                         PendingIntent.FLAG_UPDATE_CURRENT);
-
                 AlarmManager alarmManager1 = (AlarmManager) context.getSystemService(context.ALARM_SERVICE);
-                alarmManager1.set(AlarmManager.RTC_WAKEUP, tri - (1000*60), pendingIntent1);
+                alarmManager1.set(AlarmManager.RTC_WAKEUP, tri, pendingIntent1);
                 Toast.makeText(context, "Reminder has been set", Toast.LENGTH_SHORT).show();
             }
         });

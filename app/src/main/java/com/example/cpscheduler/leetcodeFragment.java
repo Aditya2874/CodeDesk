@@ -17,6 +17,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
@@ -26,6 +27,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class leetcodeFragment extends Fragment {
+    private static final String API_URL = "https://competeapi.vercel.app/contests/leetcode/";
     private ArrayList<Information> arrList = new ArrayList<>();
     public leetcodeFragment() {
         // Required empty public constructor
@@ -40,46 +42,51 @@ public class leetcodeFragment extends Fragment {
         RecyclerView recyclerView = inf.findViewById(R.id.recyler_leetcode);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
         RecyclerAdapter adp = new RecyclerAdapter(arrList,this.getContext());
-        RequestQueue rQ;
-        rQ = Volley.newRequestQueue((this.getActivity()));
+        RequestQueue queue = Volley.newRequestQueue(this.getContext());
 
-        String url = "https://kontests.net/api/v1/leet_code";
-        JsonArrayRequest jArrRq = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray response) {
+        // Request a JSON object response from the provided URL.
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+                (Request.Method.GET, API_URL, null, new Response.Listener<JSONObject>() {
 
-                try {
-                    for (int i = 0; i < response.length(); i++) {
-                        JSONObject resObj = response.getJSONObject(i);
-                        Information information = new Information();
-                        information.setName(resObj.getString("name"));
-                        information.setDuration(resObj.getString("duration"));
-                        information.setLink(resObj.getString("url"));
-                        String temp = resObj.getString("start_time");
-                        temp = temp.substring(0,temp.length()-5);
-                        String s = temp.substring(0, 10) + " " + temp.substring(11, temp.length());
-                        information.setStart_time(s);
-                        temp = resObj.getString("end_time");
-                        temp = temp.substring(0,temp.length()-5);
-                        s = temp.substring(0, 10) + " " + temp.substring(11, temp.length());
-                        information.setEnd_time(s);
-                        arrList.add(information);
-                        lpb.setVisibility(View.GONE);
-                        recyclerView.setAdapter(adp);
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        // Handle the JSON response
+                        try {
+                            JSONObject data = response.getJSONObject("data");
+                            JSONArray topTwoContests = data.getJSONArray("topTwoContests");
+                            for (int i = 0; i < topTwoContests.length(); i++) {
+                                JSONObject contest = topTwoContests.getJSONObject(i);
+                                String title = contest.getString("title");
+                                long startTime = contest.getLong("startTime");
+                                long duration = contest.getLong("duration");
+                                // Process the contest details as needed
+                                Log.d("Contest", "Title: " + title + ", Start Time: " + startTime + ", Duration: " + duration);
+
+                                Information information = new Information();
+                                information.setName(title);
+                                information.setDuration(duration);
+                                information.setLink("https://leetcode.com/contest/");
+                                information.setStart_time(Long.toString(startTime));
+                                information.setEnd_time(Long.toString(startTime+duration));
+                                arrList.add(information);
+                                lpb.setVisibility(View.GONE);
+                                recyclerView.setAdapter(adp);
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
                     }
+                }, new Response.ErrorListener() {
 
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // Handle errors
+                        Log.e("API Error", "Error occurred: " + error.getMessage());
+                    }
+                });
 
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.d("tag","Error");
-            }
-        });
-        rQ.add(jArrRq);
+        // Add the request to the RequestQueue.
+        queue.add(jsonObjectRequest);
         return inf;
     }
 }

@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager2 viewPager;
     private VPAdapter adapter;
     private AlarmManager alarmManager ;
-    private String[] titles = new String[]{"ALL","CODEFORCES","CODE CHEF","LEETCODE"};
+    private String[] titles = new String[]{"CODEFORCES","CODE CHEF","LEETCODE"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

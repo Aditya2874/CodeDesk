@@ -21,10 +21,8 @@ public class VPAdapter extends FragmentStateAdapter {
 
        switch (position){
            case 0:
-               return new AllFragment();
-           case 1:
                return new codeforcesFragment();
-           case 2:
+           case 1:
                return new codechefFragment();
            default:
                return new leetcodeFragment();
@@ -33,6 +31,6 @@ public class VPAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 4;
+        return 3;
     }
 }
