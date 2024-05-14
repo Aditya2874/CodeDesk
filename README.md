@@ -51,4 +51,4 @@ Please ensure your code follows the project's coding standards and includes rele
 
 ## Contact
 
-If you have any questions or suggestions, feel free to contact us at [adityadeokar123@gmail.com](adityadeokar123@gmail.com).
+If you have any questions or suggestions, feel free to contact us at [Aditya Deokar](adityadeokar123@gmail.com) [Mohak Goyal](manmps17@gmail.com).
