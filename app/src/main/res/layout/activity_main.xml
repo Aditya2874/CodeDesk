@@ -14,12 +14,11 @@
         android:background="@color/black"
         tools:ignore="SpeakableTextPresentCheck"
         app:tabTextColor="@color/white"
-    app:tabSelectedTextColor="@color/red"
-    app:tabIndicatorColor="@color/green"
-    app:tabIndicatorHeight="3dp"
-    app:tabMode="scrollable"
-    app:tabGravity="fill"
-    app:tabRippleColor="@null" />
+        app:tabSelectedTextColor="@color/red"
+        app:tabIndicatorColor="@color/green"
+        app:tabIndicatorHeight="3dp"
+        app:tabGravity="fill"
+        app:tabRippleColor="@null" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"

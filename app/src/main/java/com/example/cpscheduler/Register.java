@@ -63,11 +63,11 @@ public class Register extends AppCompatActivity {
                 String confirm = rcon.getText().toString();
                 String name= rname.getText().toString();
                 String leet=rleet.getText().toString();
+                String cod=rcodef.getText().toString();
                 SharedPreferences pref = getSharedPreferences("leet_name",MODE_PRIVATE);
                 SharedPreferences.Editor editor = pref.edit();
                 editor.putString("lkey",leet);
                 editor.apply();
-                String cod=rcodef.getText().toString();
                 SharedPreferences cfpref = getSharedPreferences("cf_name",MODE_PRIVATE);
                 SharedPreferences.Editor ceditor = cfpref.edit();
                 ceditor.putString("cfkey",cod);
