@@ -2,6 +2,17 @@
 
 CodeDesk is an application designed to keep you updated with contest information from popular competitive programming websites like Codeforces, CodeChef, and LeetCode. With CodeDesk, you can easily track contest updates, set reminders for upcoming contests, and manage your personal coding profile.
 
+## Our Product Demonstration
+https://github.com/Aditya2874/CodeDesk/assets/146119834/5878acae-d121-4ff1-b6ea-3c76c3875b3e
+
+## Some images of our App
+![IMG-20240615-WA0007](https://github.com/Aditya2874/CodeDesk/assets/146119834/c5773a25-53d0-4a53-8803-9775ba619067)
+![IMG-20240615-WA0008](https://github.com/Aditya2874/CodeDesk/assets/146119834/8d95781a-b4bd-4af8-930e-0eef714aeb22)
+![IMG-20240615-WA0012](https://github.com/Aditya2874/CodeDesk/assets/146119834/feeef45d-f098-460d-9f1a-0b1a26ea52de)
+![IMG-20240615-WA0011](https://github.com/Aditya2874/CodeDesk/assets/146119834/049096c9-344d-47b6-b890-495dfe552694)
+![IMG-20240615-WA0010](https://github.com/Aditya2874/CodeDesk/assets/146119834/8d52274b-29fe-4bbc-a6e9-f576904f1790)
+![IMG-20240615-WA0009](https://github.com/Aditya2874/CodeDesk/assets/146119834/19ea6f5a-e7ae-4bde-8117-667876b28809)
+
 ## Features
 
 - **Contest Updates**: Get real-time updates on upcoming contests from Codeforces, CodeChef, and LeetCode.
